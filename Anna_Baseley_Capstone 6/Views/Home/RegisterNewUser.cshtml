@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "RegisterNewUser";
+}
+
+<h2>Please fill out the form to register!</h2>
+<br /><br />
+
+      <form action="/Home/AddUser" method="post">
+          <input type="text" name="UserID" placeholder="UserID" />
+          <br /><br />
+          <input type="password" name="UserPassword" placeholder="Password" />
+          <br /><br />
+          <input type="text" name="Email" placeholder="example@example.com" />
+          <br /><br />
+          <input type="text" name="FirstName" placeholder="First Name" />
+          <br /><br />
+          <input type="text" name="LastName" placeholder="Last Name" />
+          <br /><br />
+          @Html.AntiForgeryToken()
+          <input type="submit" value="Register"/>
+      </form>
+
+
+

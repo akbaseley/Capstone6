@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "TaskForm";
+}
+
+
+<h2>@ViewBag.AuthorizedUser.FirstName's Task Form</h2>
+<br /><br />
+
+<form action="/Home/AddNewTask" method="post">
+    <input readonly="" value="@ViewBag.AuthorizedUser.UserID" name="UserID" /> <br /><br />
+    <input type="text" placeholder="Task Name" name="TaskName" /> <br /><br />
+    <input type="text" placeholder="Description" name="Description" /> <br /><br />
+    <input type="date" placeholder="Due Date" name="DueDate" /> <br /><br />
+    <input readonly="" value="Not Complete" name="Complete" /> <br /><br />
+    @Html.AntiForgeryToken()
+    <input type="submit" value="Submit" />
+</form>

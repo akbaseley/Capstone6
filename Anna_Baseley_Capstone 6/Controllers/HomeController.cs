@@ -69,7 +69,10 @@ namespace Anna_Baseley_Capstone_6.Controllers
                 return View("Index");
             }
 
-            TempData.Add("AuthorizedUser", currentUser);
+            if (!TempData.ContainsKey("AuthorizedUser"))
+            {
+                TempData.Add("AuthorizedUser", currentUser);
+            }
 
             TempData["AuthorizedUser"] = currentUser;
          
